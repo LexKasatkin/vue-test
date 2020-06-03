@@ -1,6 +1,24 @@
 {
   "presets": [
-    ["env", { "modules": false }],
-    "stage-3"
+    ["@babel/preset-env", {
+      "modules": false,
+      "targets": {
+        "browsers": ["Android > 4.0"]
+      },
+      "corejs": 3,
+      "useBuiltIns": "entry"
+    }]
+  ],
+  "plugins": [
+    ["@babel/plugin-proposal-decorators", {
+      "legacy": true
+    }],
+    ["@babel/plugin-transform-runtime", {
+      "absoluteRuntime": true
+    }],
+    ["@babel/plugin-proposal-class-properties", { "loose": true }],
+    "jsx-vue-functional",
+    "transform-vue-jsx",
+    "lodash"
   ]
 }
